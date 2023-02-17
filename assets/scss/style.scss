@@ -1,0 +1,387 @@
+$item-size: 40px;
+$columns: 12;
+$rows: 18;
+$yellow: rgb(255, 255, 78);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: arial;
+}
+.crossword-board {
+    padding-top: 20px;
+    margin: 0 auto;
+    z-index: 1;
+    width: 720px;
+    height: 480px;
+    display: grid;
+    grid-template: repeat($columns, 40px)/repeat($rows, 40px);
+    position: relative;
+}
+
+.crossword-board--highlight {
+    position: absolute;
+    z-index: 50;
+}
+
+.crossword-board__item-highlight {
+    background-color: #9aff67;
+    display: grid;
+    opacity: 0;
+    transition: opacity 0.3s linear;
+}
+
+// Подсвета строчных 
+.crossword-board__item-highlight--across {
+    &-1 {
+        grid-column: 6/19;
+        grid-row: 7/7;
+    }
+
+    &-6 {
+        grid-column: 1/9;
+        grid-row: 9/9;
+    }
+}
+
+#item7-6:valid~#item7-7:valid~#item7-8:valid~#item7-9:valid~#item7-10:valid~#item7-11:valid~#item7-12:valid~#item7-13:valid~#item7-14:valid~#item7-15:valid~#item7-16:valid~#item7-17:valid~#item7-18:valid~.crossword-board--highlight .crossword-board__item-highlight--across-1 {
+    opacity: 1;
+}
+
+#item9-1:valid~#item9-2:valid~#item9-3:valid~#item9-4:valid~#item9-5:valid~#item9-6:valid~#item9-7:valid~#item9-8:valid~.crossword-board--highlight .crossword-board__item-highlight--across-6 {
+    opacity: 1;
+}
+
+// Подсветка столбиков
+.crossword-board__item-highlight--down {
+    &-2 {
+        grid-column: 10/10;
+        grid-row: 3/10;
+    }
+
+    &-3 {
+        grid-column: 8/8;
+        grid-row: 6/10;
+    }
+
+    &-4 {
+        grid-column: 13/13;
+        grid-row: 2/8;
+    }
+
+    &-5 {
+        grid-column: 15/15;
+        grid-row: 1/11;
+    }
+
+    &-7 {
+        grid-column: 2/2;
+        grid-row: 5/13;
+    }
+}
+
+#item3-10:valid~#item4-10:valid~#item5-10:valid~#item6-10:valid~#item7-10:valid~#item8-10:valid~#item9-10:valid~.crossword-board--highlight .crossword-board__item-highlight--down-2 {
+    opacity: 1;
+}
+
+#item6-8:valid~#item7-8:valid~#item8-8:valid~#item9-8:valid~.crossword-board--highlight .crossword-board__item-highlight--down-3 {
+    opacity: 1;
+}
+
+#item2-13:valid~#item3-13~#item4-13:valid~#item5-13:valid~#item6-13:valid~#item7-13:valid~.crossword-board--highlight .crossword-board__item-highlight--down-4 {
+    opacity: 1;
+}
+
+#item1-15:valid~#item2-15:valid~#item3-15:valid~#item4-15:valid~#item5-15:valid~#item6-15:valid~#item7-15:valid~#item8-15:valid~#item9-15:valid~#item10-15:valid~.crossword-board--highlight .crossword-board__item-highlight--down-5 {
+    opacity: 1;
+}
+
+#item5-2:valid~#item6-2:valid~#item7-2:valid~#item8-2:valid~#item9-2:valid~#item10-2:valid~#item11-2:valid~#item12-2:valid~.crossword-board--highlight .crossword-board__item-highlight--down-7 {
+    opacity: 1;
+}
+
+// номера
+.crossword-board--labels {
+    position: absolute;
+    z-index: 60;
+}
+
+.crossword-board__item-label {
+    position: relative;
+
+    &-text {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        font-size: 14px;
+        line-height: 1;
+    }
+
+    ;
+
+    &--1 {
+        grid-column: 6/6;
+        grid-row: 7/7;
+    }
+
+    &--2 {
+        grid-column: 10/10;
+        grid-row: 3/3;
+    }
+
+    &--3 {
+        grid-column: 8/8;
+        grid-row: 6/6;
+    }
+
+    &--4 {
+        grid-column: 13/13;
+        grid-row: 2/2;
+    }
+
+    &--5 {
+        grid-column: 15/15;
+    }
+
+    &--6 {
+        grid-row: 9/9;
+    }
+
+    &--7 {
+        grid-column: 2/2;
+        grid-row: 5/5;
+    }
+}
+
+.crossword-board__item--blank {
+    background: rgb(70, 70, 70);
+    border: 1px solid rgb(70, 70, 70);
+    outline: 1px solid rgb(70, 70, 70);
+}
+
+.crossword-clues {
+    position: absolute;
+    top: ($item-size * $columns);
+    width: ($item-size * $rows);
+    &__list {
+        margin-top: 60px;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    &__list--across {}
+
+    &__list--down {}
+}
+.crossword-clues__list{
+    &-title{
+        font-weight: bold;
+        padding: 4px;
+    }
+    &-item{
+        padding: 4px;
+        &:before{
+            content: attr(data-number) ". ";
+        }
+    }
+}
+
+#item9-1:focus ~ .crossword-clues .crossword-clues__list-item--across-6{
+    background: $yellow;
+}
+#item9-2:focus ~ .crossword-clues .crossword-clues__list-item--across-6{
+    background: $yellow;
+}
+#item9-3:focus ~ .crossword-clues .crossword-clues__list-item--across-6{
+    background: $yellow;
+}
+#item9-4:focus ~ .crossword-clues .crossword-clues__list-item--across-6{
+    background: $yellow;
+}
+#item9-5:focus ~ .crossword-clues .crossword-clues__list-item--across-6{
+    background: $yellow;
+}
+#item9-6:focus ~ .crossword-clues .crossword-clues__list-item--across-6{
+    background: $yellow;
+}
+#item9-7:focus ~ .crossword-clues .crossword-clues__list-item--across-6{
+    background: $yellow;
+}
+#item9-8:focus ~ .crossword-clues .crossword-clues__list-item--across-6{
+    background: $yellow;
+}
+
+#item5-2:focus ~ .crossword-clues .crossword-clues__list-item--down-7{
+    background: $yellow;
+}
+#item6-2:focus ~ .crossword-clues .crossword-clues__list-item--down-7{
+    background: $yellow;
+}
+#item7-2:focus ~ .crossword-clues .crossword-clues__list-item--down-7{
+    background: $yellow;
+}
+#item8-2:focus ~ .crossword-clues .crossword-clues__list-item--down-7{
+    background: $yellow;
+}
+#item9-2:focus ~ .crossword-clues .crossword-clues__list-item--down-7{
+    background: $yellow;
+}
+#item10-2:focus ~ .crossword-clues .crossword-clues__list-item--down-7{
+    background: $yellow;
+}
+#item11-2:focus ~ .crossword-clues .crossword-clues__list-item--down-7{
+    background: $yellow;
+}
+#item12-2:focus ~ .crossword-clues .crossword-clues__list-item--down-7{
+    background: $yellow;
+}
+
+#item7-6:focus ~ .crossword-clues .crossword-clues__list-item--across-1{
+    background: $yellow;
+}
+#item7-7:focus ~ .crossword-clues .crossword-clues__list-item--across-1{
+    background: $yellow;
+}
+#item7-8:focus ~ .crossword-clues .crossword-clues__list-item--across-1{
+    background: $yellow;
+}
+#item7-9:focus ~ .crossword-clues .crossword-clues__list-item--across-1{
+    background: $yellow;
+}
+#item7-10:focus ~ .crossword-clues .crossword-clues__list-item--across-1{
+    background: $yellow;
+}
+#item7-11:focus ~ .crossword-clues .crossword-clues__list-item--across-1{
+    background: $yellow;
+}
+#item7-12:focus ~ .crossword-clues .crossword-clues__list-item--across-1{
+    background: $yellow;
+}
+#item7-13:focus ~ .crossword-clues .crossword-clues__list-item--across-1{
+    background: $yellow;
+}
+#item7-14:focus ~ .crossword-clues .crossword-clues__list-item--across-1{
+    background: $yellow;
+}
+#item7-15:focus ~ .crossword-clues .crossword-clues__list-item--across-1{
+    background: $yellow;
+}
+#item7-16:focus ~ .crossword-clues .crossword-clues__list-item--across-1{
+    background: $yellow;
+}
+#item7-17:focus ~ .crossword-clues .crossword-clues__list-item--across-1{
+    background: $yellow;
+}
+#item7-18:focus ~ .crossword-clues .crossword-clues__list-item--across-1{
+    background: $yellow;
+}
+#item6-8:focus ~ .crossword-clues .crossword-clues__list-item--down-3{
+    background: $yellow;
+}
+#item7-8:focus ~ .crossword-clues .crossword-clues__list-item--down-3{
+    background: $yellow;
+}
+#item8-8:focus ~ .crossword-clues .crossword-clues__list-item--down-3{
+    background: $yellow;
+}
+#item9-8:focus ~ .crossword-clues .crossword-clues__list-item--down-3{
+    background: $yellow;
+}
+
+#item3-10:focus ~ .crossword-clues .crossword-clues__list-item--down-2{
+    background: $yellow;
+}
+#item4-10:focus ~ .crossword-clues .crossword-clues__list-item--down-2{
+    background: $yellow;
+}
+#item5-10:focus ~ .crossword-clues .crossword-clues__list-item--down-2{
+    background: $yellow;
+}
+#item6-10:focus ~ .crossword-clues .crossword-clues__list-item--down-2{
+    background: $yellow;
+}
+#item7-10:focus ~ .crossword-clues .crossword-clues__list-item--down-2{
+    background: $yellow;
+}
+#item8-10:focus ~ .crossword-clues .crossword-clues__list-item--down-2{
+    background: $yellow;
+}
+#item9-10:focus ~ .crossword-clues .crossword-clues__list-item--down-2{
+    background: $yellow;
+}
+
+#item2-13:focus ~ .crossword-clues .crossword-clues__list-item--down-4{
+    background: $yellow;
+}
+#item3-13:focus ~ .crossword-clues .crossword-clues__list-item--down-4{
+    background: $yellow;
+}
+#item4-13:focus ~ .crossword-clues .crossword-clues__list-item--down-4{
+    background: $yellow;
+}
+#item5-13:focus ~ .crossword-clues .crossword-clues__list-item--down-4{
+    background: $yellow;
+}
+#item6-13:focus ~ .crossword-clues .crossword-clues__list-item--down-4{
+    background: $yellow;
+}
+#item7-13:focus ~ .crossword-clues .crossword-clues__list-item--down-4{
+    background: $yellow;
+}
+
+#item1-15:focus ~ .crossword-clues .crossword-clues__list-item--down-5{
+    background:$yellow;
+}
+#item2-15:focus ~ .crossword-clues .crossword-clues__list-item--down-5{
+    background:$yellow;
+}
+#item3-15:focus ~ .crossword-clues .crossword-clues__list-item--down-5{
+    background: $yellow;
+}
+#item4-15:focus ~ .crossword-clues .crossword-clues__list-item--down-5{
+    background: $yellow;
+}
+#item5-15:focus ~ .crossword-clues .crossword-clues__list-item--down-5{
+    background: $yellow;
+}
+#item6-15:focus ~ .crossword-clues .crossword-clues__list-item--down-5{
+    background: $yellow;
+}
+#item7-15:focus ~ .crossword-clues .crossword-clues__list-item--down-5{
+    background: $yellow;
+}
+#item8-15:focus ~ .crossword-clues .crossword-clues__list-item--down-5{
+    background: $yellow;
+}
+#item9-15:focus ~ .crossword-clues .crossword-clues__list-item--down-5{
+    background: $yellow;
+}
+
+.input {
+    z-index: 100;
+    border: 1px solid rgb(70, 70, 70);
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    background: transparent;
+    position: relative;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+    &:active,
+    &:focus {
+        background-color: $yellow;
+        border: 1px solid rgb(70, 70, 70);
+        outline: 1px solid rgb(70, 70, 70);
+    }
+
+    // &:valid{
+    //     border: 2px solid green;
+    // }
+    // &:invalid{
+    //     border: 2px solid red;
+    // }
+}
