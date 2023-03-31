@@ -32,60 +32,84 @@ body {
 }
 
 .crossword-board__item-highlight--across-1 {
-  grid-column: 6/19;
-  grid-row: 7/7;
+  grid-column: 11/19;
+  grid-row: 12/12;
+}
+.crossword-board__item-highlight--across-4 {
+  grid-column: 8/19;
+  grid-row: 8/8;
 }
 .crossword-board__item-highlight--across-6 {
-  grid-column: 1/9;
-  grid-row: 9/9;
+  grid-column: 9/23;
+  grid-row: 2/2;
+}
+.crossword-board__item-highlight--across-7 {
+  grid-column: 1/15;
+  grid-row: 4/4;
+}
+.crossword-board__item-highlight--across-10 {
+  grid-column: 8/21;
+  grid-row: 16/16;
 }
 
-#item7-6:valid ~ #item7-7:valid ~ #item7-8:valid ~ #item7-9:valid ~ #item7-10:valid ~ #item7-11:valid ~ #item7-12:valid ~ #item7-13:valid ~ #item7-14:valid ~ #item7-15:valid ~ #item7-16:valid ~ #item7-17:valid ~ #item7-18:valid ~ .crossword-board--highlight .crossword-board__item-highlight--across-1 {
+#item12-12:valid ~ #item12-13:valid ~ #item12-14:valid ~ #item12-15:valid ~ #item12-16:valid ~ #item12-17:valid ~ #item12-18:valid ~ .crossword-board--highlight .crossword-board__item-highlight--across-1 {
   opacity: 1;
 }
 
-#item9-1:valid ~ #item9-2:valid ~ #item9-3:valid ~ #item9-4:valid ~ #item9-5:valid ~ #item9-6:valid ~ #item9-7:valid ~ #item9-8:valid ~ .crossword-board--highlight .crossword-board__item-highlight--across-6 {
+#item8-8:valid ~ #item8-9:valid ~ #item8-10:valid ~ #item8-11:valid ~ #item8-12:valid ~ #item8-13:valid ~ #item8-14:valid ~ #item8-15:valid ~ #item8-16:valid ~ #item8-17:valid ~ #item8-18:valid ~ .crossword-board--highlight .crossword-board__item-highlight--across-4 {
+  opacity: 1;
+}
+
+#item4-1:valid ~ #item4-2:valid ~ #item4-3:valid ~ #item4-4:valid ~ #item4-5:valid ~ #item4-6:valid ~ #item4-7:valid ~ #item4-8:valid ~ #item4-9:valid ~ #item4-10:valid ~ #item4-11:valid ~ #item4-12:valid ~ #item4-13:valid ~ #item4-14:valid ~ .crossword-board--highlight .crossword-board__item-highlight--across-7 {
+  opacity: 1;
+}
+
+#item2-9:valid ~ #item2-10:valid ~ #item2-11:valid ~ #item2-12:valid ~ #item2-13:valid ~ #item2-14:valid ~ #item2-15:valid ~ #item2-16:valid ~ #item2-17:valid ~ #item2-18:valid ~ #item2-19:valid ~ #item2-20:valid ~ #item2-21:valid ~ #item2-22:valid ~ .crossword-board--highlight .crossword-board__item-highlight--across-6 {
+  opacity: 1;
+}
+
+#item16-8:valid ~ #item16-9:valid ~ #item16-10:valid ~ #item16-11:valid ~ #item16-12:valid ~ #item16-13:valid ~ #item16-14:valid ~ #item16-15:valid ~ #item16-16:valid ~ #item16-17:valid ~ #item16-18:valid ~ #item16-19:valid ~ #item16-20:valid ~ .crossword-board--highlight .crossword-board__item-highlight--across-10 {
   opacity: 1;
 }
 
 .crossword-board__item-highlight--down-2 {
-  grid-column: 10/10;
-  grid-row: 3/10;
+  grid-column: 15/15;
+  grid-row: 12/20;
 }
 .crossword-board__item-highlight--down-3 {
-  grid-column: 8/8;
-  grid-row: 6/10;
-}
-.crossword-board__item-highlight--down-4 {
   grid-column: 13/13;
-  grid-row: 2/8;
+  grid-row: 8/14;
 }
 .crossword-board__item-highlight--down-5 {
-  grid-column: 15/15;
+  grid-column: 10/10;
   grid-row: 1/11;
 }
-.crossword-board__item-highlight--down-7 {
+.crossword-board__item-highlight--down-8 {
+  grid-column: 4/4;
+  grid-row: 2/9;
+}
+.crossword-board__item-highlight--down-9 {
   grid-column: 2/2;
-  grid-row: 5/13;
+  grid-row: 3/7;
 }
 
-#item3-10:valid ~ #item4-10:valid ~ #item5-10:valid ~ #item6-10:valid ~ #item7-10:valid ~ #item8-10:valid ~ #item9-10:valid ~ .crossword-board--highlight .crossword-board__item-highlight--down-2 {
+#item3-2:valid ~ #item4-2:valid ~ #item5-2:valid ~ #item6-2:valid ~ .crossword-board--highlight .crossword-board__item-highlight--down-9 {
   opacity: 1;
 }
 
-#item6-8:valid ~ #item7-8:valid ~ #item8-8:valid ~ #item9-8:valid ~ .crossword-board--highlight .crossword-board__item-highlight--down-3 {
+#item2-4:valid ~ #item3-4:valid ~ #item4-4:valid ~ #item5-4:valid ~ #item6-4:valid ~ #item7-4:valid ~ #item8-4:valid ~ .crossword-board--highlight .crossword-board__item-highlight--down-8 {
   opacity: 1;
 }
 
-#item2-13:valid ~ #item3-13 ~ #item4-13:valid ~ #item5-13:valid ~ #item6-13:valid ~ #item7-13:valid ~ .crossword-board--highlight .crossword-board__item-highlight--down-4 {
+#item1-10:valid ~ #item2-10:valid ~ #item3-10:valid ~ #item4-10:valid ~ #item5-10:valid ~ #item6-10:valid ~ #item7-10:valid ~ #item8-10:valid ~ #item9-10:valid ~ #item10-10:valid ~ .crossword-board--highlight .crossword-board__item-highlight--down-5 {
   opacity: 1;
 }
 
-#item1-15:valid ~ #item2-15:valid ~ #item3-15:valid ~ #item4-15:valid ~ #item5-15:valid ~ #item6-15:valid ~ #item7-15:valid ~ #item8-15:valid ~ #item9-15:valid ~ #item10-15:valid ~ .crossword-board--highlight .crossword-board__item-highlight--down-5 {
+#item8-13:valid ~ #item9-13:valid ~ #item10-13:valid ~ #item11-13:valid ~ #item12-13:valid ~ #item13-13:valid ~ .crossword-board--highlight .crossword-board__item-highlight--down-3 {
   opacity: 1;
 }
 
-#item5-2:valid ~ #item6-2:valid ~ #item7-2:valid ~ #item8-2:valid ~ #item9-2:valid ~ #item10-2:valid ~ #item11-2:valid ~ #item12-2:valid ~ .crossword-board--highlight .crossword-board__item-highlight--down-7 {
+#item12-15:valid ~ #item13-15:valid ~ #item14-15:valid ~ #item15-15:valid ~ #item16-15:valid ~ #item17-15:valid ~ #item18-15:valid ~ #item19-15:valid ~ .crossword-board--highlight .crossword-board__item-highlight--down-2 {
   opacity: 1;
 }
 
@@ -114,7 +138,7 @@ body {
 }
 .crossword-board__item-label--3 {
   grid-column: 13/13;
-  grid-row: 10/10;
+  grid-row: 8/8;
 }
 .crossword-board__item-label--4 {
   grid-column: 8/8;
